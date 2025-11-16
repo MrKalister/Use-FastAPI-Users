@@ -17,4 +17,4 @@ class Base(DeclarativeBase):
 
     @declared_attr.directive
     def __tablename__(cls) -> str:
-        return f'{StrHelper.camel_to_snake_case(cls.__name__)}s'
+        return f"{StrHelper.camel_to_snake_case(cls.__name__)}s"

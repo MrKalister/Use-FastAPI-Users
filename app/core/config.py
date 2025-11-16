@@ -8,7 +8,7 @@ class RunConfig(BaseModel):
 
 
 class ApiConfig(BaseModel):
-    prefix: str = '/api'
+    prefix: str = "/api"
 
 
 class DatabaseConfig(BaseModel):
@@ -22,10 +22,10 @@ class DatabaseConfig(BaseModel):
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         # Values from the next file overwrite data from the prior one.
-        env_file=('.env.template', '.env'),
-        env_prefix='APP_CONFIG__',
+        env_file=(".env.template", ".env"),
+        env_prefix="APP_CONFIG__",
         case_sensitive=False,
-        env_nested_delimiter='__'
+        env_nested_delimiter="__",
     )
 
     run: RunConfig = RunConfig()
