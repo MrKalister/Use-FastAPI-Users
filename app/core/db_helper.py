@@ -40,7 +40,9 @@ class DataBaseHelper:
 
     async def session_getter(self) -> AsyncGenerator[AsyncSession, None]:
         async with self.session_factory as session:
+            # depends startup
             yield session
+            # when depend shut down __aexit__ will be run and session will be closed
 
 
 db_helper = DataBaseHelper(
