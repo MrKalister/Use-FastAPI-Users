@@ -22,7 +22,7 @@ class DatabaseConfig(BaseModel):
         # index
         "ix": "ix_%(column_0_label)s",
         # uniq
-        "uq": "uq_%(table_name)s_%(column_0_name)s",
+        "uq": "uq_%(table_name)s_%(column_0_N_name)s",
         # constraint
         "ck": "ck_%(table_name)s_%(constraint_name)s",
         # foreign key
