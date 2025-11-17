@@ -7,6 +7,8 @@ from utils import StrHelper
 
 class Base(DeclarativeBase):
     __abstract__ = True
+    # Use gives constraint_name.
+    # It helps to delete a constraint in 'downgrade' of alembic.
     metadata = MetaData(naming_convention=settings.db.convention)
 
     id: Mapped[int] = mapped_column(primary_key=True)

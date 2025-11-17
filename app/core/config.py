@@ -19,10 +19,15 @@ class DatabaseConfig(BaseModel):
     max_overflow: int = 10
 
     convention: dict[str, str] = {
+        # index
         "ix": "ix_%(column_0_label)s",
+        # uniq
         "uq": "uq_%(table_name)s_%(column_0_name)s",
+        # constraint
         "ck": "ck_%(table_name)s_%(constraint_name)s",
+        # foreign key
         "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
+        # primary key
         "pk": "pk_%(table_name)s",
     }
 
