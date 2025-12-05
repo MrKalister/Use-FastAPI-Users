@@ -11,11 +11,12 @@ python = "^3.12"
 uvicorn = {extras = ["standard"], version = "^0.38.0"}
 pydantic = {extras = ["email"], version = "^2.12.4"}
 pydantic-settings = "^2.11.0"
-fastapi = "^0.121.0"
+fastapi = "^0.123.0"
 sqlalchemy = {extras = ["asyncio"], version = "^2.0.44"}
 asyncpg = "^0.31.0"
 alembic = "^1.17.2"
 orjson = "^3.11.4"
+fastapi-users = {extras = ["sqlalchemy"], version = "^15.0.1"}
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.11.0"
