@@ -1,11 +1,7 @@
 from typing import AsyncGenerator
 
-from sqlalchemy.ext.asyncio import (
-    create_async_engine,
-    AsyncEngine,
-    async_sessionmaker,
-    AsyncSession,
-)
+from sqlalchemy.ext.asyncio import (AsyncEngine, AsyncSession,
+                                    async_sessionmaker, create_async_engine)
 
 from core.config import settings
 
@@ -39,7 +35,7 @@ class DataBaseHelper:
         await self.engine.dispose()
 
     async def session_getter(self) -> AsyncGenerator[AsyncSession, None]:
-        async with self.session_factory as session:
+        async with self.session_factory() as session:
             # depends startup
             yield session
             # when depend shut down __aexit__ will be run and session will be closed
