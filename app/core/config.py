@@ -34,7 +34,7 @@ class DatabaseConfig(BaseModel):
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        # Values from the next file overwrite data from the prior one.
+        # Values from the next file overwrite values from the prior.
         env_file=(".env.template", ".env"),
         env_prefix="APP_CONFIG__",
         case_sensitive=False,
