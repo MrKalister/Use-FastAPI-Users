@@ -8,3 +8,7 @@ poetry install
 ```
 docker compose up -d pg
 ```
+* create secret:
+```shell
+python3 -c 'import secrets; print(secrets.token_hex())'
+```
