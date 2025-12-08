@@ -1,14 +1,15 @@
-from pydantic import BaseModel
+from fastapi_users import schemas
+
+from core.types.user_id import UserIdType
 
 
-class UserBase(BaseModel):
-    username: str
-
-
-class UserIn(UserBase):
+class UserRead(schemas.BaseUser[UserIdType]):
     pass
 
 
-class UserOut(UserBase):
-    id: int
-    username: str
+class UserCreate(schemas.BaseUserCreate):
+    pass
+
+
+class UserUpdate(schemas.BaseUserUpdate):
+    pass
