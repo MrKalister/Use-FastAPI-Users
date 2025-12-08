@@ -32,6 +32,10 @@ class DatabaseConfig(BaseModel):
     }
 
 
+class AccessTokenConfig(BaseModel):
+    lifetime_seconds: int = 3600
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         # Values from the next file overwrite values from the prior.
@@ -44,6 +48,7 @@ class Settings(BaseSettings):
     run: RunConfig = RunConfig()
     api: ApiConfig = ApiConfig()
     db: DatabaseConfig
+    access_token: AccessTokenConfig = AccessTokenConfig()
 
 
 settings = Settings()
