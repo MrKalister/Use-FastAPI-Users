@@ -9,6 +9,14 @@ class RunConfig(BaseModel):
 
 class ApiConfig(BaseModel):
     prefix: str = "/api"
+    version: str = "/v1"
+    auth: str = "/auth"
+
+    @property
+    def bearer_token_url(self):
+        parts = (self.prefix, self.version, self.auth, "/login")
+        path = "".join(parts)
+        return path.removeprefix("/")
 
 
 class DatabaseConfig(BaseModel):
@@ -50,7 +58,7 @@ class Settings(BaseSettings):
     run: RunConfig = RunConfig()
     api: ApiConfig = ApiConfig()
     db: DatabaseConfig
-    access_token: AccessTokenConfig = AccessTokenConfig()
+    access_token: AccessTokenConfig
 
 
 settings = Settings()
