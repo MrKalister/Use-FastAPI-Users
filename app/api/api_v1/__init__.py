@@ -7,5 +7,5 @@ router = APIRouter(prefix=settings.api.version)
 router.include_router(
     router=auth_router,
     prefix=settings.api.auth,
-    tags=["Auth"],
+    tags=[settings.api.auth.removeprefix("/")],
 )
