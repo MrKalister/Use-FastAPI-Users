@@ -16,7 +16,10 @@ class Base(DeclarativeBase):
     # It helps to delete a constraint in 'downgrade' of alembic.
     metadata = MetaData(naming_convention=settings.db.convention)
 
-    id: Mapped[int] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(
+        primary_key=True,
+        autoincrement=True,
+    )
 
     @declared_attr.directive
     def __tablename__(cls) -> str:
