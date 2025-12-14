@@ -11,6 +11,7 @@ class ApiConfig(BaseModel):
     prefix: str = "/api"
     version: str = "/v1"
     auth: str = "/auth"
+    users: str = "/users"
 
     @property
     def bearer_token_url(self):
