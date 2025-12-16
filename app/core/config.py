@@ -47,6 +47,11 @@ class AccessTokenConfig(BaseModel):
     verification_token_secret: str
 
 
+class SuperUserConfig(BaseModel):
+    email: str
+    password: str
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         # Values from the next file overwrite values from the prior.
@@ -60,6 +65,7 @@ class Settings(BaseSettings):
     api: ApiConfig = ApiConfig()
     db: DatabaseConfig
     access_token: AccessTokenConfig
+    superuser: SuperUserConfig
 
 
 settings = Settings()
