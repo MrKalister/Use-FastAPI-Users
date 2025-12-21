@@ -22,3 +22,10 @@ router.include_router(
         UserCreate,
     ),
 )
+
+# Provides /request-verify-token and /verify routes
+# to manage user e-mail verification.
+# /request-verify-token - get token to verify
+router.include_router(
+    fastapi_users_router.get_verify_router(UserRead),
+)
