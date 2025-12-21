@@ -12,6 +12,7 @@ class ApiConfig(BaseModel):
     version: str = "/v1"
     auth: str = "/auth"
     users: str = "/users"
+    messages: str = "/messages"
     requires_verification: bool = True
 
     @property
