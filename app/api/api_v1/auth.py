@@ -29,3 +29,9 @@ router.include_router(
 router.include_router(
     fastapi_users_router.get_verify_router(UserRead),
 )
+
+# Provides /forgot-password and /reset-password routes
+# to allow a user to reset its password.
+router.include_router(
+    fastapi_users_router.get_reset_password_router(),
+)
