@@ -12,6 +12,7 @@ class ApiConfig(BaseModel):
     version: str = "/v1"
     auth: str = "/auth"
     users: str = "/users"
+    requires_verification: bool = True
 
     @property
     def bearer_token_url(self):
